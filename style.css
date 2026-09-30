@@ -1,0 +1,289 @@
+/* =========================================================
+   Poetas de Palmares — style.css
+   Paleta: verde-escuro, bege e um dourado discreto
+   ========================================================= */
+
+/* ---------- Cores e medidas (mude aqui para ajustar o site todo) ---------- */
+:root {
+  --verde-escuro: #1f3d2b;
+  --verde-medio: #2f5d44;
+  --bege: #f3ecdc;
+  --bege-claro: #faf6ec;
+  --bege-escuro: #e3d8bf;
+  --texto: #2b2a24;
+  --dourado: #b08d4a;
+
+  --fonte-titulo: Georgia, "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  --fonte-texto: Georgia, "Palatino Linotype", Palatino, serif;
+  --largura-maxima: 68rem;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bege);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--verde-medio);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 3px;
+}
+
+/* Evita que o título da seção fique escondido ao clicar no menu */
+section[id],
+header[id],
+footer[id] {
+  scroll-margin-top: 1rem;
+}
+
+/* ---------- 1. Cabeçalho ---------- */
+.cabecalho {
+  background: var(--verde-escuro);
+  color: var(--bege-claro);
+  text-align: center;
+  padding: 4rem 1.5rem 0;
+  border-bottom: 6px solid var(--dourado);
+}
+
+.cabecalho__titulo {
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.cabecalho__frase {
+  max-width: 34rem;
+  margin: 0 auto 2.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-style: italic;
+  color: var(--bege-escuro);
+}
+
+/* Menu */
+.menu__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.5rem;
+}
+
+.menu__lista a {
+  display: inline-block;
+  padding: 0.9rem 0.25rem;
+  color: var(--bege-claro);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.menu__lista a:hover,
+.menu__lista a:focus-visible {
+  border-bottom-color: var(--dourado);
+}
+
+/* ---------- Conteúdo principal ---------- */
+main {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- 2. Apresentação do projeto ---------- */
+.projeto {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 4rem 0 3rem;
+}
+
+.projeto h2,
+.poetas h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: var(--verde-escuro);
+}
+
+/* ---------- 3. Poetas ---------- */
+.poetas {
+  padding: 1rem 0 4rem;
+}
+
+.poetas__intro {
+  max-width: 42rem;
+  font-style: italic;
+  color: var(--verde-medio);
+  margin-bottom: 2rem;
+}
+
+.poetas__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 2rem;
+}
+
+/* Cartão de poeta */
+.cartao {
+  background: var(--bege-claro);
+  border: 1px solid var(--bege-escuro);
+  border-top: 6px solid var(--verde-escuro);
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(31, 61, 43, 0.12);
+}
+
+.cartao__foto {
+  margin: 0 0 1.25rem;
+}
+
+.cartao__foto img,
+.cartao__foto-vazia {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+}
+
+.cartao__foto img {
+  object-fit: cover;
+}
+
+.cartao__foto-vazia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bege-escuro);
+  color: var(--verde-medio);
+  font-style: italic;
+  text-align: center;
+}
+
+.cartao__nome {
+  font-size: 1.6rem;
+  color: var(--verde-escuro);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--dourado);
+}
+
+.cartao__bloco {
+  margin-bottom: 1.25rem;
+}
+
+.cartao__bloco h4 {
+  font-size: 1.05rem;
+  color: var(--verde-medio);
+  margin-bottom: 0.4rem;
+}
+
+.cartao__bloco p,
+.cartao__bloco li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cartao__bloco ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.cartao__bloco blockquote {
+  margin: 0.75rem 0 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--dourado);
+  font-style: italic;
+}
+
+/* Fontes: um pouco mais discretas */
+.cartao__bloco:last-child {
+  margin-bottom: 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--bege-escuro);
+}
+
+.cartao__bloco:last-child p {
+  font-size: 0.9rem;
+  color: #5a584b;
+  margin-bottom: 0;
+}
+
+/* ---------- 4. Rodapé ---------- */
+.rodape {
+  background: var(--verde-escuro);
+  color: var(--bege-escuro);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 6px solid var(--dourado);
+  font-size: 1rem;
+}
+
+.rodape p {
+  margin-bottom: 0.4rem;
+}
+
+.rodape__nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--bege-claro);
+}
+
+.rodape a {
+  color: var(--bege-claro);
+}
+
+/* ---------- Telas pequenas (celulares) ---------- */
+@media (max-width: 30rem) {
+  body {
+    font-size: 1.05rem;
+  }
+
+  .cabecalho {
+    padding-top: 3rem;
+  }
+
+  .projeto {
+    padding-top: 3rem;
+  }
+
+  .cartao {
+    padding: 1.25rem;
+  }
+}
