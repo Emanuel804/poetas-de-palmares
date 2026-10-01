@@ -195,12 +195,28 @@ main {
   text-align: center;
 }
 
+.cartao__foto figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #5a584b;
+  text-align: right;
+}
+
 .cartao__nome {
   font-size: 1.6rem;
   color: var(--verde-escuro);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--dourado);
+}
+
+.cartao__apelido {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--verde-medio);
 }
 
 .cartao__bloco {
@@ -229,6 +245,10 @@ main {
   padding: 0.25rem 0 0.25rem 1rem;
   border-left: 3px solid var(--dourado);
   font-style: italic;
+}
+
+.cartao__bloco a {
+  word-break: break-word;
 }
 
 /* Fontes: um pouco mais discretas */
